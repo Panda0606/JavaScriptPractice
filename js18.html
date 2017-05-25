@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>450</title>
+<script>
+window.onload=function(){
+
+   var oTab=document.getElementById('tab1');
+   var oBtn=document.getElementById('btn1');
+   var oName=document.getElementById('name'); 
+   var oBtn1=document.getElementById('btn2');
+   
+    oBtn.onclick=function(){
+       
+         for(var i=0; i<oTab.tBodies[0].rows.length; i++){
+    
+            var sTxt=oName.value.toLowerCase();
+            var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+        
+            var arr=sTxt.split(' ');
+            oTab.tBodies[0].rows[i].style.display='none';        
+            for(j=0; j<arr.length;j++){
+                if(sTab.search(arr[j])!=-1){        
+                     oTab.tBodies[0].rows[i].style.display='block';            
+                   }
+             }         
+       }  
+    }
+    oBtn1.onclick=function(){
+    
+    var arr=[];
+    for(var i=0;i<oTab.tBodies[0].rows.length;i++){  
+    
+    arr[i]=oTab.tBodies[0].rows[i];
+    
+    }
+    
+     arr.sort(function(tr1,tr2){
+     
+     var n1=parseInt(tr1.cells[0].innerHTML);
+     var n2=parseInt(tr2.cells[0].innerHTML);
+     
+     return n1-n2;
+     
+     })
+     
+     for(var i=0;i<oTab.tBodies[0].rows.length;i++){  
+       
+        oTab.tBodies[0].appendChild(arr[i]);     
+     }
+     
+    }      
+}
+</script>
+</head>
+<body>
+name <input id="name" type="text"/>
+<input id="btn1" type="button" value="search"/>
+<input id="btn2" type="button" value="sort"/>
+<table id="tab1" border="1px" width="400px"/>
+    <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>age</td>
+            <td>mul</td>
+    </thead>
+    <tbody>
+           <tr>
+           <td>3</td>
+           <td>Freya</td>
+           <td>1</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>2</td>
+           <td>Fredy</td>
+           <td>18</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>1</td>
+           <td>xu</td>
+           <td>18</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>5</td>
+           <td>Cecilia</td>
+           <td>17</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>4</td>
+           <td>Lorry</td>
+           <td>17</td>
+           <td></td>
+           </tr>
+    </tbody>
+</table>
+</body>
+</html>

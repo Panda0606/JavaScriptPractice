@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>789</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+
+    var oBtn=document.getElementById('btn'); 
+    var oDiv=document.getElementById('div1');
+    var oDiv1=oDiv.getElementsByTagName('input');
+    
+    oBtn.onclick=function(){  
+    for (var i=0; i<oDiv1.length;i++){    
+         oDiv1[i].checked=true;
+        }  
+    } 
+    
+    var oBtn1=document.getElementById('btn1');
+    oBtn1.onclick=function(){  
+    for (var i=0; i<oDiv1.length;i++){    
+         oDiv1[i].checked=false;
+        }  
+       } 
+    
+    var oBtn2=document.getElementById('btn2');
+    oBtn2 .onclick=function(){  
+    for (var i=0; i<oDiv1.length;i++){ 
+       if (oDiv1[i].checked==true){   
+         oDiv1[i].checked=false;
+         }else{
+         oDiv1[i].checked=true;
+         }
+        }  
+       } 
+          
+};
+</script>
+</head>
+<body>
+
+<input id="btn" type="button" value="quanXuan" /> 
+<input id="btn1" type="button" value="qaunBu"/>
+<input id="btn2" type="button" value="fanXuan"/>
+
+<div id="div1" >
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+<input type="checkbox" /><br>
+</div>
+</body>     
+</html>

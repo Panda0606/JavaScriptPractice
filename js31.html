@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+
+	</style>
+	<script src="/Users/panda/Desktop/JS/move1.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById('play');
+			var aBtn=oDiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+			var oUl=oDiv.getElementsByTagName('ul')[0];
+
+			var now=0;
+
+		    for(var i=0;i<aBtn.length; i++){
+
+                aBtn[i].index=i;
+		    	aBtn[i].onclick=function(){
+
+                now=this.index;
+		    	tab(); 		    	
+		    	}
+
+
+
+		    }
+       function tab(){
+           for(var i=0;i<aBtn.length; i++){
+		    		 	  aBtn[i].className='';
+		    		      }
+		    		 oBtn[now].className='active';
+		    		 move1(oUl, {top:-150*now});
+                     }
+                }
+        function next(){
+        	now++;
+        	if(now==oBtn.length){
+
+        		now=0;
+        	}
+        	tab();
+        }
+
+            var timer=setInterval(next,2000);
+
+            oDiv.onmouseover=function(){
+
+            	clearInterval(timer);
+            }
+            oDiv.onmouseout=function(){
+
+            	timer=setInterval(next,2000);
+            }
+		};
+	</script>
+</head>
+<body>
+   <div class="play" id="play">
+       <ol >
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	   </ol>
+   	   <ul>
+   	   	<li><img src="/Users/panda/Desktop/JS/img/0.png"></li>
+		<li><img src="/Users/panda/Desktop/JS/img/1.png"></li>
+		<li><img src="/Users/panda/Desktop/JS/img/2.png"></li>
+		<li><img src="/Users/panda/Desktop/JS/img/3.png"></li>
+		<li><img src="/Users/panda/Desktop/JS/img/4.png"></li>
+   	   </ul>
+   </div>
+</div>
+</body>
+</html>

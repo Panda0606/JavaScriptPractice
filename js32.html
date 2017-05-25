@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	* {margin: 0px;padding: 0px;}
+		#ul1{ width: 400px;height: 400px;border:1px solid black; margin: 50px auto;overflow: hidden;}
+		#ul1 li{ border-bottom: 1px grey dashed; list-style: none;padding: 4px;overflow: hidden; filter: alpha(opacity:40) ; opacity: 0.4;}
+
+
+	</style>
+	<script src="/Users/panda/Desktop/JS/move1.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+
+			var oUl=document.getElementById('ul1');
+			var aTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+
+			oBtn.onclick=function(){
+
+             var oLi=document.createElement('li');
+
+             oLi.innerHTML=aTxt.value;
+             aTxt.value='';
+
+             if (oUl.children.length>0){
+
+                  oUl.insertBefore(oLi, oUl.children[0]);}
+
+             else{
+
+             	  oUl.appendChild(oLi);
+             }
+              
+             var aHight=oLi.offsetHeight;
+             oLi.style.height='0';
+             
+             move1(oLi, {height:aHight}, function(){
+
+             	move1(oLi, {opacity:100});
+             });
+
+         
+
+			}
+			
+		}
+	</script>
+</head>
+<body>
+
+</body>
+<textarea id="txt" ></textarea> 
+<input id="btn" type="button" value="share">
+
+	<ul id="ul1">
+		<li>2222</li>
+	</ul>
+
+</html>

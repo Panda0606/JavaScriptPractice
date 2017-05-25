@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>987</title>
+<style>
+.active{background:yellow;}
+#div1 div{ width:100px; height:100px; border:1px solid black;background:pink;display:none;}
+</style>
+
+<script>
+window.onload=function(){
+    var oDiv=document.getElementById('div1');
+    var oBtn=oDiv.getElementsByTagName('input');
+    var aDiv=oDiv.getElementsByTagName('div');
+    
+    for(var i=0;i<oBtn.length;i++){
+        
+        oBtn[i].index=i;
+        oBtn[i].onclick=function(){   
+           
+          for(var i=0;i<oBtn.length;i++){
+           oBtn[i].className='';  
+           aDiv[i].style.display='none';
+             
+             }   
+            this.className='active'; 
+            aDiv[this.index].style.display='block';    
+            }
+          
+       } 
+    
+}
+</script>
+</head>
+<body>
+
+<div id=div1>
+
+   <input class="active" type="button" value="cat" />
+   <input type="button" value="dog" />
+   <input type="button" value="mouse" />
+   <input type="button" value="horse" />
+   
+   <div style="display:block">cat</div>
+   <div >dog</div>
+   <div >mouse</div>
+   <div >horse</div>
+  
+</div>
+</body>
+</html>

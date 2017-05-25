@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#parent{width: 600px; height: 30px; background: grey;  position: relative; margin: 10px auto;}
+		#div1{width: 30px; height: 30px; background: green; position: absolute; left: 0px;top: 0px;}
+		#div2{width: 300px; height: 400px; position: relative; overflow: hidden; border: 1px solid black;}
+		#div3{position: absolute;left:0;top: 0px;}
+	</style>
+	<script type="text/javascript">
+
+		    window.onload=function(){
+                  
+		        var oDiv=document.getElementById('div1');
+		        var oParent=document.getElementById('parent');
+		        var oDiv2=document.getElementById('div2');
+		        var oDiv3=document.getElementById('div3');
+		    	var disX=0;
+		    	//var disY=0;
+
+		        oDiv.onmousedown=function(ev){
+		    		 var oEvent=ev||event;
+
+		    		 disX=oEvent.clientX-oDiv.offsetLeft;
+		    		 //disY=oEvent.clientY-oDiv.offsetTop; 
+
+                document.onmousemove=function(ev){
+
+              	  var oEvent=ev||event;
+                  var l=oEvent.clientX-disX;
+                  //var t=oEvent.clientY-disY;
+                   if(l<0){
+
+                  	l=0;
+                  }else if(l>oParent.offsetWidth-oDiv.offsetWidth){
+
+                  	l=oParent.offsetWidth-oDiv.offsetWidth;
+                  }
+
+                  oDiv.style.left=l+'px'; 
+                  //oDiv.style.top=t+'px';
+
+                  //document.title=l;
+                  var scrop=l/(oParent.offsetWidth-oDiv.offsetWidth);
+
+                  oDiv3.style.top=-scrop*(oDiv3.offsetHeight-oDiv2.offsetHeight)+'px';
+                  
+
+
+                  }
+
+                    document.onmouseup=function(){
+              	    document.onmousemove=null;
+              	    document.onmouseup=null;
+
+                        }
+
+               }
+
+                //return false;
+
+             
+
+		    };
+
+	</script>
+</head>
+<body>
+<div id="parent">
+	<div id="div1" ></div>
+</div>
+<div id="div2" >
+	<div id="div3">
+		Why buy from Article?
+Article delivers beautifully designed modern furniture with outstanding attention to detail direct to you. We cut out all of the middlemen, we don't have any showrooms, and we don't employ any salespeople. That means you get high-quality furniture at radically lower (and much fairer) prices than you would at a typical retailer. Find out more about how we do it.
+
+Flat rate shipping
+Whether you order 1 item, 10 items, or more, your entire order will be delivered to your door for a flat rate of $49 across Canada. Choose from affordable delivery service upgrades (that are also flat rate) if you would like your furniture delivered inside your home or even unpacked and assembled for you.
+
+30 day satisfaction guarantee
+We are confident you will love your new Article furniture, but we give you 30 days to make sure you do. If you're not completely happy with it, we'll arrange to have it picked up and refund the full cost of the products you decide to return. Read more about our no questions asked return policy.
+
+Part of the...
+Why buy from Article?
+Article delivers beautifully designed modern furniture with outstanding attention to detail direct to you. We cut out all of the middlemen, we don't have any showrooms, and we don't employ any salespeople. That means you get high-quality furniture at radically lower (and much fairer) prices than you would at a typical retailer. Find out more about how we do it.
+
+Flat rate shipping
+Whether you order 1 item, 10 items, or more, your entire order will be delivered to your door for a flat rate of $49 across Canada. Choose from affordable delivery service upgrades (that are also flat rate) if you would like your furniture delivered inside your home or even unpacked and assembled for you.
+
+30 day satisfaction guarantee
+We are confident you will love your new Article furniture, but we give you 30 days to make sure you do. If you're not completely happy with it, we'll arrange to have it picked up and refund the full cost of the products you decide to return. Read more about our no questions asked return policy.
+
+Part of the...
+Why buy from Article?
+Article delivers beautifully designed modern furniture with outstanding attention to detail direct to you. We cut out all of the middlemen, we don't have any showrooms, and we don't employ any salespeople. That means you get high-quality furniture at radically lower (and much fairer) prices than you would at a typical retailer. Find out more about how we do it.
+
+Flat rate shipping
+Whether you order 1 item, 10 items, or more, your entire order will be delivered to your door for a flat rate of $49 across Canada. Choose from affordable delivery service upgrades (that are also flat rate) if you would like your furniture delivered inside your home or even unpacked and assembled for you.
+
+30 day satisfaction guarantee
+We are confident you will love your new Article furniture, but we give you 30 days to make sure you do. If you're not completely happy with it, we'll arrange to have it picked up and refund the full cost of the products you decide to return. Read more about our no questions asked return policy.
+
+Part of the...
+	</div>
+</div>
+
+</body>
+</html>

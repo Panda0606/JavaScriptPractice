@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		document.onkeydown=function(ev){
+			var oTxt=document.getElementById('txt');
+			var oEvent=ev||event;
+			//alert(oEvent.keyCode);
+
+			if( oEvent.keyCode!=8 && (oEvent.keyCode<48||oEvent.keyCode>57)) {
+
+				return false;
+			}
+
+			
+			
+		}
+
+	</script>
+</head>
+<body>
+<input id="txt" type="text" >
+
+</body>
+</html>

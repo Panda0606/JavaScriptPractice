@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function addMyEvent(obj, ev, fn){
+
+			if(obj.attachEvent){
+
+				obj.attachEvent('on'+ ev, fn);
+
+
+			}else{
+
+				obj.addEventListener(ev, fn, false);
+
+			}
+
+
+		}
+
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+
+			addMyEvent(oBtn, 'click', function(){
+
+				alert('a');
+			})
+
+			addMyEvent(oBtn, 'click', function(){
+
+				alert('b');
+			})
+
+
+
+
+
+		}
+	</script>
+</head>
+<body>
+<input id="btn" type="button" value="share">
+</body>
+</html>

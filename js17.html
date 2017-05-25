@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>45</title>
+<script>
+window.onload=function(){
+
+   var oTab=document.getElementById('tab1');
+   var oBtn=document.getElementById('btn1');
+   var oName=document.getElementById('name'); 
+   
+    oBtn.onclick=function(){
+       
+         for(var i=0; i<oTab.tBodies[0].rows.length; i++){
+         
+         var sTxt=oName.value.toLowerCase();
+         var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+        
+         if(sTab.search(sTxt) !=-1){
+         
+           oTab.tBodies[0].rows[i].style.background='yellow'; 
+                    
+         }else{
+          
+           oTab.tBodies[0].rows[i].style.background=''; 
+         }
+       
+      }
+   
+   }
+  
+}
+</script>
+</head>
+<body>
+name <input id="name" type="text"/>
+<input id="btn1" type="button" value="search"/>
+<table id="tab1" border="1px" width="400px"/>
+    <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>age</td>
+            <td>mul</td>
+    </thead>
+    <tbody>
+           <tr>
+           <td>1</td>
+           <td>六花括号</td>
+           <td>1</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>2</td>
+           <td>六打电话</td>
+           <td>18</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>3</td>
+           <td>xu</td>
+           <td>18</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>4</td>
+           <td>小</td>
+           <td>17</td>
+           <td></td>
+           </tr>
+           <tr>
+           <td>5</td>
+           <td>小米</td>
+           <td>17</td>
+           <td></td>
+           </tr>
+    </tbody>
+</table>
+</body>
+</html>

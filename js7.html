@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>111</title>
+<script>
+//  css(oDiv, 'width') 获取样式
+//   css(oDiv, 'width', '100px') 设置样式
+function css(obj, name, value){
+
+   if(arguments.length==2){
+   
+        return obj.style[name];
+   }else{
+   
+        return obj.style[name]=value;
+   }
+
+}
+
+ window.onload= function(){
+   
+      var oDiv= document.getElementById('div1');
+      
+      alert(css(oDiv,'width'));
+        //css(oDiv,'width','500px');
+   }
+</script>
+</head>
+
+<body>
+<div id="div1" style=" width:100px; height:100px; border:1px solid black;background:red;">
+
+</div>
+
+</body>
+</html>

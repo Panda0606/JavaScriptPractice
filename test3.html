@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			#div1{ width: 200px; height: 200px; background: red; margin: 20px; float: left; filter: alpha(opacity:30); opacity: 0.3;}
+		</style>
+		<script>
+         window.onload=function(){
+		    var oDiv=document.getElementById('div1');
+		  	
+         alert(getComputedStyle(oDiv,false).opacity); 
+       }       
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

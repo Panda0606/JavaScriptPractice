@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>333</title>
+<head>
+
+<script>
+
+window.onload = function(){
+
+var Btn1=document.getElementById('btn1');
+var Btn2=document.getElementById('btn2');
+var timer=null;
+
+  Btn1.onclick= function(){
+  timer=setInterval( function(){ alert('baba');},2000); 
+                          }
+   
+  Btn2.onclick= function(){  clearInterval(timer);
+                           }
+
+};
+
+</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="open"/>
+<input id="btn2" type="button" value="close"/>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>450</title>
+<script>
+window.onload=function(){
+
+   var oBt=document.getElementById('btn1');
+   var oUl=document.getElementById('ul1');
+   var aLi=oUl.getElementsByTagName('li');
+   
+   oBt.onclick=function(){
+    
+   var arr=[];
+   for (var i=0;i<aLi.length; i++){
+       arr[i]=aLi[i];
+      }
+     arr.sort(function(li1,li2){
+     
+        var n1=parseInt(li1.innerHTML);
+        var n2=parseInt(li2.innerHTML);
+        
+        return n1-n2;     
+     })
+     
+       for (var i=0;i<aLi.length;i++){
+        oUl.appendChild(arr[i]);
+      }
+   } 
+  
+}
+</script>
+</head>
+<body>
+<input id="btn1" type="button" value="sort"/>
+<ul id="ul1">
+   <li>24</li>
+   <li>33</li>
+   <li>89</li>
+   <li>28</li>
+   <li>64</li>
+   <li>9</li>
+   <li>14</li>
+</ul>
+</body>
+</html>

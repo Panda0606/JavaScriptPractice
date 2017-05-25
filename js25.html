@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>121</title>
+<style>
+#div1{
+width:100px; height:100px; background:red; position:absolute;left:700px;top:50px;
+}
+#div2{
+width:1px; height:300px; background:blue; position:absolute;left:300px;top:50px;
+}
+#div3{
+width:1px; height:300px; background:blue; position:absolute;left:100px;top:50px;
+}
+</style>
+<script>
+var timer=null;
+function move(iTarget){
+   clearInterval(timer);
+   var oDiv=document.getElementById('div1');   
+   timer=setInterval(function(){
+    var speed=0;
+     
+    if(oDiv.offsetLeft<iTarget){
+     speed=7
+    }else{
+     speed=-7
+    }
+    if(Math.abs(oDiv.offsetLeft-iTarget)<7){
+      
+      clearInterval(timer);
+      oDiv.style.left=iTarget;
+    }else{
+     oDiv.style.left=oDiv.offsetLeft+speed+'px';  }
+   
+     },30);
+}
+</script>
+</head>
+<body>
+<input type="button" value="300" onclick="move(300)">
+<input type="button" value="100" onclick="move(100)">
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+</body>
+</html>

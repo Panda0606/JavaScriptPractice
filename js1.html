@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>123</title>
+<style>
+#div1 { width:200px; 
+        height:100px; 
+        border:2px; 
+        display:none;
+        background:#ccc;
+        }
+#div2 { width:200px;  
+        height:200px; 
+        background:red;
+        }
+#div3{
+       width:50px;
+       height:200px;
+       background:pink;
+       display:none;
+}        
+        
+</style>
+<link id="l1" rel="stylesheet" type="text/css" href="css1.css"/>
+<script>
+function toGreen(){
+       var oDiv=document.getElementById('div2');
+       oDiv.style.width='500px'; 
+       oDiv.style.height='500px';
+       oDiv.style.background='green';
+ }
+function toRed(){
+      var oDiv=document.getElementById('div2');
+          oDiv.style.width='200px'; 
+          oDiv.style.height='200px';
+          oDiv.style.background='red'; 
+ } 
+ function show(){
+      var sDiv=document.getElementById('div1');
+          sDiv.style.display='block';          
+ }
+function showOff(){
+      var sDiv=document.getElementById('div1');
+          sDiv.style.display='none';          
+}
+function skin11(){
+     var oL= document.getElementById('l1');
+         oL.href='css1.css';         
+}
+function skin22(){
+     var oL= document.getElementById('l1');
+         oL.href='css2.css';         
+}
+function showHide(){
+        var oP=document.getElementById('div3');
+        if( oP.style.display=='block'){
+           oP.style.display='none';
+        }else{
+        
+         oP.style. display='block';
+        }
+
+}
+</script>
+<body>
+<input type="checkbox" onmouseover="show()"  onmouseout="showOff()">
+<div id="div1">bababaababab</div>
+<div id="div2" onmouseover="toGreen()" onmouseout="toRed()"></div>
+
+<input type="button"  value="skin1" onclick="skin11()"/>
+<input type="button"  value="skin2" onclick="skin22()"/>
+ 
+<input type="button" value="more" onclick="showHide()"/>
+<div id="div3"></div>
+</body>
+</html>

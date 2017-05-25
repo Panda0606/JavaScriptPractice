@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>421</title>
+<style>
+div{
+width:200px; height:100px; background:red;margin:10px;
+}
+div{
+width:200px; height:100px; background:red;margin:10px;
+}
+div{
+width:200px; height:100px; background:red;margin:10px;
+}
+</style>
+<script>
+window.onload=function(){
+
+   var aDiv=document.getElementsByTagName('div');
+   
+   for(var i=0;i<aDiv.length;i++){
+     aDiv[i].timer=null;
+     aDiv[i].onmouseover=function(){ 
+         move(this,400)
+       }
+      aDiv[i].onmouseout =function(){
+     
+         move(this,200)
+     }
+   
+   }
+}
+
+function move(obj,iTarget){
+
+    clearInterval(obj.timer);
+    obj.timer=setInterval(function(){
+    
+     var speed=(iTarget-obj.offsetWidth)/6;
+     if(speed>0){
+         speed=Math.ceil(speed);
+     }else {
+       speed=Math.floor(speed);
+     }
+     
+     if(obj.offsetWidth==iTarget){
+        clearInterval(obj.timer);
+       
+     }else{
+     
+       obj.style.width=obj.offsetWidth+speed+'px';
+     }
+    
+    },30);
+
+}
+</script>
+</head>
+<body>
+<div ></div>
+<div ></div>
+<div ></div>
+</body>
+</html>

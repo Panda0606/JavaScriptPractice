@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>456</title>
+<style>
+#div3{
+       width:50px;
+       height:200px;
+       background:pink;
+       display:none;
+} 
+#div2{
+    width:50px;
+    height:50px;
+    background:red;
+
+}
+#div1 {
+    width:50px;
+    height:50px;
+    border:2px solid black;
+    background:red;
+}
+
+</style>
+<script>
+function showHide(){
+     var oL=document.getElementById('div3');
+        if (oL.style.display=='block'){        
+        oL.style.display='none';
+        }else{
+         oL.style.display='block';
+        }
+}
+function toGreen(color){
+   var oP=document.getElementById('div1');//定义
+       oP.style.background=color;      
+}
+function setXing(name,value){
+       var oG=document.getElementById('div2');
+           oG.style[name]=value;
+           
+}
+window.onload=function(){
+var BtN=document.getElementById('btn1');
+
+BtN.onclick=function (){
+  
+    alert( 'a');
+};
+}
+</script>
+</head>
+<body>
+<input type="button" value="lve" onclick="toGreen('green')"/> 
+<input type="button" value="huang" onclick="toGreen('yellow')"/>
+<input type="button" value="hei" onclick="toGreen('black')"/>
+<div id="div1"></div>
+
+<input type="button" value="kuan" onclick="setXing('width','100px')"/> 
+<input type="button" value="gao" onclick="setXing('height','100px')"/>
+<input type="button" value="fen" onclick="setXing('background','pink')"/>
+<div id="div2"></div>
+
+<input type="button" value="more" onclick="showHide()"/>
+<div id="div3"></div>
+
+<input id="btn1" type="button" value="king" />
+
+</body>     
+</html>

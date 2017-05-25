@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>121</title>
+		<style type="text/css">
+			#div1{width: 203px; height: 50px; background: red; position: absolute;right: -203px;bottom: 0px; z-index:1;}
+			#div2{width: 203px; height: 315px; padding: 0 0 48px; background: blue; position: absolute;right: -1px;bottom: -315px; display:none;}
+			#close{position: absolute;right: 0px; bottom: 335px;z-index:1;}
+			#show{position: absolute;right: 0px; bottom: 0px;z-index:2;}
+            
+		</style>
+		<script src="/Users/panda/Desktop/JS/move.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBtn=document.getElementById('show');
+				var oDiv1=document.getElementById('div1');
+				var oDiv2=document.getElementById('div2');
+				var oBtn1=document.getElementById('close');
+
+				//alert(oDiv1.getComputedStyle.width);
+
+				oBtn.onclick=function(){
+
+					move(oDiv1,'right',0, function(){
+
+						oDiv2.style.display='block';
+						
+						move(oDiv2,'bottom',0);
+
+					});
+
+				}
+				oBtn1.onclick=function(){
+
+					move(oDiv2,'bottom', -315, function(){
+						
+						oDiv2.style.display='none';
+						move(oDiv1,'right',-203 );
+
+					})
+
+				}
+
+			}
+
+		</script>
+	</head>
+	<body>
+	    <input id="show" type="button" value="show">
+
+		<div id="div1"></div>
+		<div id="div2">
+			 <input id="close" type="button" value="close">
+		</div>
+	</body>
+
+</html>

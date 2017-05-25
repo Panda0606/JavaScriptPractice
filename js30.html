@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div1{
+			width: 100px; height: 100px; background: blue; filter: alpha(opacity:30) ; opacity: 0.3;
+		}
+	</style>
+	<script src="/Users/panda/Desktop/JS/move1.js"></script>
+	<script>
+		window.onload=function(){
+            
+			var oBtn=document.getElementById('btn1');
+			var oDiv=document.getElementById('div1');
+
+			  oBtn.onclick=function(){
+
+			  move1(oDiv, { swidth:101, height:300,opacity: 100} );
+
+			}
+		}
+
+	</script>
+</head>
+<body>
+<input id="btn1" type="button" value="move">
+<div id="div1"></div>
+</body>
+</html>
